@@ -1,0 +1,64 @@
+-------------------------------------------------------------------------------
+
+
+C:\Program Files\Malwarebytes\Anti-Malware\Actions.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\Program Files\Malwarebytes\Anti-Malware\Actions.dll: copied to '::ClamAV\20240211-18092996\infected\Actions.dll'
+C:\Program Files\Malwarebytes\Anti-Malware\arwlib.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\Program Files\Malwarebytes\Anti-Malware\arwlib.dll: copied to '::ClamAV\20240211-18092996\infected\arwlib.dll'
+C:\Program Files\Malwarebytes\Anti-Malware\MBAMWsc.exe: Win.Virus.Expiro-10019721-0 FOUND
+C:\Program Files\Malwarebytes\Anti-Malware\MBAMWsc.exe: copied to '::ClamAV\20240211-18092996\infected\MBAMWsc.exe'
+C:\Program Files\Malwarebytes\Anti-Malware\mbshlext.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\Program Files\Malwarebytes\Anti-Malware\mbshlext.dll: copied to '::ClamAV\20240211-18092996\infected\mbshlext.dll'
+C:\Program Files\Malwarebytes\Anti-Malware\PoliciesControllerImpl.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\Program Files\Malwarebytes\Anti-Malware\PoliciesControllerImpl.dll: copied to '::ClamAV\20240211-18092996\infected\PoliciesControllerImpl.dll'
+C:\Program Files\Malwarebytes\Anti-Malware\SdkDbUpdatrV5.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\Program Files\Malwarebytes\Anti-Malware\SdkDbUpdatrV5.dll: copied to '::ClamAV\20240211-18092996\infected\SdkDbUpdatrV5.dll'
+
+C:\Program Files\WinRAR\Uninstall.exe: Win.Virus.Expiro-10016185-0 FOUND
+C:\Program Files\WinRAR\Uninstall.exe: copied to '::ClamAV\20240211-18092996\infected\Uninstall.exe'
+C:\Program Files\WinRAR\UnRAR.exe: Win.Virus.Expiro-10017562-0 FOUND
+C:\Program Files\WinRAR\UnRAR.exe: copied to '::ClamAV\20240211-18092996\infected\UnRAR.exe'
+
+C:\ProgramData\Malwarebytes\MBAMService\Actions.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\ProgramData\Malwarebytes\MBAMService\Actions.dll: copied to '::ClamAV\20240211-18092996\infected\Actions.dll.001'
+C:\ProgramData\Malwarebytes\MBAMService\dbclsupdate\staging\ActionsV5.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\ProgramData\Malwarebytes\MBAMService\dbclsupdate\staging\ActionsV5.dll: copied to '::ClamAV\20240211-18092996\infected\ActionsV5.dll'
+C:\ProgramData\Malwarebytes\MBAMService\lkg_db\Actions.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\ProgramData\Malwarebytes\MBAMService\lkg_db\Actions.dll: copied to '::ClamAV\20240211-18092996\infected\Actions.dll.002'
+
+C:\ProgramData\Malwarebytes\MBAMService\Actions.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\ProgramData\Malwarebytes\MBAMService\Actions.dll: copied to '::ClamAV\20240211-18092996\infected\Actions.dll.003'
+C:\ProgramData\Malwarebytes\MBAMService\dbclsupdate\staging\ActionsV5.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\ProgramData\Malwarebytes\MBAMService\dbclsupdate\staging\ActionsV5.dll: copied to '::ClamAV\20240211-18092996\infected\ActionsV5.dll.001'
+C:\ProgramData\Malwarebytes\MBAMService\lkg_db\Actions.dll: Win.Virus.Expiro-10019721-0 FOUND
+C:\ProgramData\Malwarebytes\MBAMService\lkg_db\Actions.dll: copied to '::ClamAV\20240211-18092996\infected\Actions.dll.004'
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8684848
+Engine version: 1.3.0
+Scanned directories: 45826
+Scanned files: 204721
+Infected files: 28
+Total errors: 355
+Data scanned: 167931.22 MB
+Data read: 112304.52 MB (ratio 1.50:1)
+Time: 15412.992 sec (256 m 52 s)
+Start Date: 2024:02:11 18:09:47
+End Date:   2024:02:11 22:26:40
+
+    Research Notes:
+
+    The scan report includes files detected as copies of originals again. 
+    The infected results actually total 14 files.
+    I need to implement a filter so that the scan doesn't scan output folders in the future.
+
+    I am hoping that these signatures are false positives, as they are legitimate software, as far as I am concerned.
+    Investigate the process of reporting false positives from ClamAV/Community.
+
+    Zip files into an archive and post along with results, for reporting.
+    
+    Posted `Actions.dll` to virustotal for further analysis. Only ClamAV and Google appeared to detect anything:
+    https://www.virustotal.com/gui/file/c474f651aaf9142b8b73869c9e69b4834c97f497d071a34ea2b269cf1ea1fda7
+
+    Information on Win.Expiro from malpedia:
+    https://malpedia.caad.fkie.fraunhofer.de/details/win.expiro
