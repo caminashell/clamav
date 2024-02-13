@@ -110,7 +110,7 @@ mkdir -p $DIR/ClamAV/$STAMP/infected
 
 # Setting up and testing the log file. If the scan fails, you should see only "Log File Created."
 DIR=$DIR/ClamAV
-echo. 2>$DIR/$STAMP/report.log
+echo 2>$DIR/$STAMP/report.log
 echo "Log File Created." > "$DIR/$STAMP/report.log"
 
 # If you want to test the command line below without executing it, put "echo " at the beginning of the line.
