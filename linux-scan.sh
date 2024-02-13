@@ -114,7 +114,7 @@ echo. 2>$DIR/$STAMP/report.log
 echo "Log File Created." > "$DIR/$STAMP/report.log"
 
 # If you want to test the command line below without executing it, put "echo " at the beginning of the line.
-echo "$AV/clamscan" -a -r -l="$DIR/$STAMP/report.log" --exclude-dir="$DIR" --bell --copy="$DIR/$STAMP/infected" "$SCAN"
+"$AV/clamscan" -a -r -l="$DIR/$STAMP/report.log" --exclude-dir="$DIR" --bell --copy="$DIR/$STAMP/infected" "$SCAN"
 
 # An additional summary to the user...
 echo -e "------------------------------------\n"
