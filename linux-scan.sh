@@ -128,7 +128,7 @@ echo -e "[$GREEN✓$NC] Infected file/s COPIED to: $BLUE$DIR/$STAMP/infected$NC\
 
 # ... and because some people just aren't savvy...
 echo -e "$BLINK$RED!!! CAUTION !!!$NC DO NOT ATTEMPT TO OPEN OR EXECUTE ANY INFECTED FILES.$NC"
-echo -e "                 YOU RISK INFECTING OR DAMAGING YOUR SYSTEM.\n"
+echo -e "                YOU RISK INFECTING OR DAMAGING YOUR SYSTEM.\n"
 echo -e "Some results can be false positive, so seek further advice and guidance."
 echo -e "If you are worried, back up your sensitive data. Be smart.\n"
 
