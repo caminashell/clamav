@@ -20,11 +20,11 @@
 # Setting up the script
 CLICOLOR=1
 GREY='\033[0;30m'
-PURPLE='\033[0;35m'
-BLUE='\033[0;36m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-RED='\033[0;31m'
+RED='\033[0;35m'
+HIGHLIGHT='\033[0;36m'
+PURPLE='\033[0;32m'
+GREEN='\033[0;33m'
+BLUE='\033[0;31m'
 BOLD='\033[1m'
 ITALIC='\e[2m'
 
@@ -34,6 +34,7 @@ CLS='\e[3J'
 
 # This assumes that you have installed ClamAV to the default from the installer.
 AV=/usr/local/bin
+DB=/usr/local/share/clamav
 
 # This is Basically your home folder documents location.
 DIR=~/Documents
@@ -42,7 +43,9 @@ DIR=~/Documents
 STAMP=$(date +%Y%m%d-%H%M%S%N)
 
 # A little note for the user, just in case. Let's hope they (can) read!
-echo -e "$BOLD$PURPLE\nNOTE: This script should be run as superuser.$NC\n"
+# echo -e "$BOLD$HIGHLIGHT\nNOTE: This script should be run as superuser.$NC\n"
+# Removed the above for now as it seems, SU isn't require. At least in my test case. Will review.
+echo -e "$BOLD$HIGHLIGHT\nWelcome to a ClamAV 1.3.0 shell script for GNU/Linux\nWritten by Camina Shell 2024-02 https://github.com/caminashell$NC\n"
 
 # This execution attempts to update the viri databases. It will fail if it cannot access the remote host.
 
@@ -87,7 +90,8 @@ else
   echo -e "[$GREEN✓$NC] User created."
     passwd -l clamav >& /dev/null
   echo -e "[$GREEN✓$NC] User account locked."
-    chown clamav:root /usr/local/share/clamav
+    # This may need reviewing again...
+    chown root:root $DB
   echo -e "[$GREEN✓$NC] User permission set. Continuing to update check...\n"
     $AV/freshclam
 fi
@@ -98,11 +102,11 @@ fi
 # /
 # /some/path/to/a/folder
 # ~/some/path/to/a\ single/file.txt
-echo -e "Enter FULL path to scan [do not use quotes]:\n"
+echo -e "$BLUE\nEnter FULL path to scan [do not use quotes, tilde, or ENV]:\n$NC"
 read SCAN
 
 # This just tells you the timestamp as a Scan ID.
-echo -e "\nScan ID: $STAMP\n"
+echo -e "$GREEN\nScan ID: $STAMP\nUser ID: $(whoami)\n"
 
 # Creating some subdirectories for scan.
 mkdir -p $DIR/ClamAV/$STAMP
@@ -114,10 +118,11 @@ echo 2>$DIR/$STAMP/report.log
 echo "Log File Created." > "$DIR/$STAMP/report.log"
 
 # If you want to test the command line below without executing it, put "echo " at the beginning of the line.
-"$AV/clamscan" -a -r -l="$DIR/$STAMP/report.log" --exclude-dir="$DIR" --bell --copy="$DIR/$STAMP/infected" "$SCAN"
+# => Fixed issue with: Can't open ...log in append mode (check permissions!)
+"$AV/clamscan" --archive-verbose --recursive --log="$DIR/$STAMP/report.log" --exclude-dir="$DIR" --bell --copy="$DIR/$STAMP/infected" "$SCAN"
 
 # An additional summary to the user...
-echo -e "------------------------------------\n"
+echo -e "------------------------------------\n$NC"
 echo -e "[$GREEN✓$NC] Scan report file saved to: $BLUE$DIR/$STAMP/report.log$NC"
 echo -e "[$GREEN✓$NC] Infected file/s COPIED to: $BLUE$DIR/$STAMP/infected$NC\n"
 
