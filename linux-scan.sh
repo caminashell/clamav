@@ -120,7 +120,7 @@ echo "Log File Created." > "$DIR/$STAMP/report.log"
 # If you want to test the command line below without executing it, put "echo " at the beginning of the line.
 # => Fixed issue with: Can't open ...log in append mode (check permissions!)
 # => Fixed exclusion. Was regex, not path.
-"$AV/clamscan" --archive-verbose --recursive --log="$DIR/$STAMP/report.log" --exclude-dir=ClamAV --bell --copy="$DIR/$STAMP/infected" "$SCAN"
+"$AV/clamscan" --archive-verbose --recursive --log="$DIR/$STAMP/report.log" --exclude-dir=ClamAV --exclude-dir=.snapshots --bell --copy="$DIR/$STAMP/infected" "$SCAN"
 
 # An additional summary to the user...
 echo -e "------------------------------------\n$NC"
